@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Geovanna ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#ff4b6e,#ff9a9e);
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+h1{
+font-size:48px;
+margin-top:20px;
+}
+
+h2{
+margin-top:10px;
+}
+
+.photo{
+margin-top:20px;
+}
+
+.photo img{
+width:250px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.counter{
+font-size:22px;
+margin-top:20px;
+}
+
+.languages{
+margin-top:30px;
+font-size:20px;
+}
+
+.languages p{
+margin:6px;
+}
+
+.letter{
+margin-top:40px;
+font-size:22px;
+min-height:120px;
+padding:20px;
+background:rgba(255,255,255,0.15);
+border-radius:15px;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px);opacity:1;}
+100%{transform:translateY(110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ Geovanna ❤️</h1>
+<h2>Você é a pessoa mais especial da minha vida</h2>
+
+<div class="photo">
+<img src="https://i.imgur.com/8Km9tLL.png">
+</div>
+
+<div class="counter">
+Estamos juntos há:<br>
+<span id="tempo"></span>
+</div>
+
+<div class="languages">
+<h2>Eu te amo em vários idiomas</h2>
+
+<p>Português — Eu te amo</p>
+<p>Inglês — I love you</p>
+<p>Espanhol — Te amo</p>
+<p>Francês — Je t'aime</p>
+<p>Italiano — Ti amo</p>
+<p>Alemão — Ich liebe dich</p>
+<p>Japonês — 愛してる</p>
+<p>Coreano — 사랑해</p>
+<p>Chinês — 我爱你</p>
+<p>Russo — Я тебя люблю</p>
+<p>Árabe — أحبك</p>
+<p>Turco — Seni seviyorum</p>
+<p>Holandês — Ik hou van jou</p>
+<p>Sueco — Jag älskar dig</p>
+<p>Polonês — Kocham cię</p>
+<p>Havaiano — Aloha wau ia ʻoe</p>
+<p>Esperanto — Mi amas vin</p>
+<p>Latim — Te amo</p>
+<p>Guarani — Rohayhu</p>
+
+</div>
+
+<div class="letter" id="carta"></div>
+
+</div>
+
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/LjhCEhWiKXk?autoplay=1&loop=1"
+allow="autoplay">
+</iframe>
+
+<script>
+
+const inicio = new Date("2024-01-01");
+
+function atualizarTempo(){
+const agora = new Date();
+const diff = agora - inicio;
+const dias = Math.floor(diff / (1000*60*60*24));
+document.getElementById("tempo").innerHTML = dias + " dias de amor ❤️";
+}
+
+setInterval(atualizarTempo,1000);
+
+const texto = "Geovanna, desde que você entrou na minha vida tudo ficou mais bonito. Eu amo seu sorriso, seu jeito e tudo em você. Este pequeno site é só uma forma de dizer que você é muito especial para mim. Eu te amo ❤️";
+
+let i = 0;
+
+function escrever(){
+if(i < texto.length){
+document.getElementById("carta").innerHTML += texto.charAt(i);
+i++;
+setTimeout(escrever,50);
+}
+}
+
+escrever();
+
+function criarCoracao(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},5000);
+}
+
+setInterval(criarCoracao,300);
+
+</script>
+
+</body>
+</html>
